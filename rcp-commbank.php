@@ -46,7 +46,7 @@ class RCPCommbank {
 	 */
 	protected function includes() {
 		require_once( $this->get_plugin_dir() . 'includes/Init.php' );
-		require_once( $this->get_plugin_dir() . 'includes/Gateway.php' );
+		require_once( $this->get_plugin_dir() . 'includes/class-rpc-payment-gateway-commbank.php' );
 
 		RCPCommbank\Init::get_instance();
 	}
