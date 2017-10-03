@@ -41,7 +41,7 @@ class Init {
 		$gateways['commbank'] = array(
 			'label'       => 'Commbank',
 			'admin_label' => 'Commbank',
-			'class'       => 'Commbank\\Gateway'
+			'class'       => 'Commbank\\RCP_Payment_Gateway_Commbank'
 		);
 
 		return $gateways;
@@ -64,33 +64,24 @@ class Init {
 			</tr>
 			<tr>
 				<th>
-					<label for="rcp_settings[rcpcommbank_profile_id]"><?php _e( 'Profile ID', rcpcommbank()->get_id() ); ?></label>
+					<label for="rcp_settings[rcpcommbank_merchant_id]"><?php _e( 'MerchantID', rcpcommbank()->get_id() ); ?></label>
 				</th>
 				<td>
-					<input class="regular-text" id="rcp_settings[rcpcommbank_profile_id]" style="width: 300px;" name="rcp_settings[rcpcommbank_profile_id]" value="<?php echo isset( $rcp_options['rcpcommbank_profile_id'] ) ? $rcp_options['rcpcommbank_profile_id'] : '' ; ?>" />
-					<p class="description"><?php _e( 'Enter your profile id.', rcpcommbank()->get_id() ); ?></p>
+					<input class="regular-text" id="rcp_settings[rcpcommbank_merchant_id]" style="width: 300px;" name="rcp_settings[rcpcommbank_merchant_id]" value="<?php echo isset( $rcp_options['rcpcommbank_merchant_id'] ) ? $rcp_options['rcpcommbank_merchant_id'] : '' ; ?>" />
+					<p class="description"><?php _e( 'Enter your merchant id.', rcpcommbank()->get_id() ); ?></p>
 				</td>
 			</tr>
 			<tr>
 				<th>
-					<label for="rcp_settings[rcpcommbank_access_key]"><?php _e( 'Access Key', rcpcommbank()->get_id() ); ?></label>
+					<label for="rcp_settings[rcpcommbank_password]"><?php _e( 'Password', rcpcommbank()->get_id() ); ?></label>
 				</th>
 				<td>
-					<input class="regular-text" id="rcp_settings[rcpcommbank_access_key]" style="width: 300px;" name="rcp_settings[rcpcommbank_access_key]" value="<?php echo isset( $rcp_options['rcpcommbank_access_key'] ) ? $rcp_options['rcpcommbank_access_key'] : '' ; ?>" />
-					<p class="description"><?php _e( 'Enter your access key.', rcpcommbank()->get_id() ); ?></p>
+					<input class="regular-text" id="rcp_settings[rcpcommbank_password]" style="width: 300px;" name="rcp_settings[rcpcommbank_password]" value="<?php echo isset( $rcp_options['rcpcommbank_password'] ) ? $rcp_options['rcpcommbank_password'] : '' ; ?>" />
+					<p class="description"><?php _e( 'Enter your password.', rcpcommbank()->get_id() ); ?></p>
 				</td>
 			</tr>
 			<tr>
-				<th>
-					<label for="rcp_settings[rcpcommbank_secret_key]"><?php _e( 'Secret Key', rcpcommbank()->get_id() ); ?></label>
-				</th>
-				<td>
-					<textarea id="rcp_settings[rcpcommbank_secret_key]" style="width: 300px;" rows="3" name="rcp_settings[rcpcommbank_secret_key]"><?php echo isset( $rcp_options['rcpcommbank_secret_key'] ) ? esc_textarea( $rcp_options['rcpcommbank_secret_key'] ) : '' ; ?></textarea>
-					<p class="description"><?php _e( 'Enter your secret key.', rcpcommbank()->get_id() ); ?></p>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2"><p><?php printf( __( '<strong>IMPORTANT</strong>: Update the CyberSource Transaction Response Page and Cancel Response Page to %s.', rcpcommbank()->get_id() ), add_query_arg( 'listener', 'rcpcommbank', get_home_url() ) ); ?></p></td>
+				<td colspan="2"><p><?php printf( __( '<strong>IMPORTANT</strong>: Update the Commbank Transaction Response Page and Cancel Response Page to %s.', rcpcommbank()->get_id() ), add_query_arg( 'listener', 'rcpcommbank', get_home_url() ) ); ?></p></td>
 			</tr>
 		</table>
 
