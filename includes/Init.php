@@ -41,7 +41,7 @@ class Init {
 		$gateways['commbank'] = array(
 			'label'       => 'Commbank',
 			'admin_label' => 'Commbank',
-			'class'       => 'Commbank\\RCP_Payment_Gateway_Commbank'
+			'class'       => 'RCPCommbank\\Gateway'
 		);
 
 		return $gateways;
@@ -79,9 +79,6 @@ class Init {
 					<input class="regular-text" id="rcp_settings[rcpcommbank_password]" style="width: 300px;" name="rcp_settings[rcpcommbank_password]" value="<?php echo isset( $rcp_options['rcpcommbank_password'] ) ? $rcp_options['rcpcommbank_password'] : '' ; ?>" />
 					<p class="description"><?php _e( 'Enter your password.', rcpcommbank()->get_id() ); ?></p>
 				</td>
-			</tr>
-			<tr>
-				<td colspan="2"><p><?php printf( __( '<strong>IMPORTANT</strong>: Update the Commbank Transaction Response Page and Cancel Response Page to %s.', rcpcommbank()->get_id() ), add_query_arg( 'listener', 'rcpcommbank', get_home_url() ) ); ?></p></td>
 			</tr>
 		</table>
 
